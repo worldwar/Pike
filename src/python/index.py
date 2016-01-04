@@ -8,11 +8,11 @@ app = Flask(__name__)
 
 conn = pymongo.MongoClient("localhost")
 db = conn.news
-collection = db['ifengnews2']
+collection = db['ifengnews3']
 
 @app.route("/index")
 def index():
-  news_list = collection.find().limit(10)
+  news_list = collection.find().sort('date', pymongo.DESCENDING).limit(10)
   news_list = list(news_list)
   return render_template('index.html', news_list=news_list)
 
