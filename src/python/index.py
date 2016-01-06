@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from bson.objectid import ObjectId
+from pymongo.objectid import ObjectId
 import pymongo
 import json
 import re
@@ -10,7 +10,7 @@ conn = pymongo.MongoClient("localhost")
 db = conn.news
 collection = db['ifengnews3']
 
-@app.route("/index")
+@app.route("/")
 def index():
   news_list = collection.find().sort('date', pymongo.DESCENDING).limit(10)
   news_list = list(news_list)
