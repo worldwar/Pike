@@ -65,6 +65,10 @@
       }
       
       .lead { margin-top: -15px; }
+	  .more {
+		  margin-top: 1.1rem;
+		  color: silver;
+	  }
     </style>
     <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
   </head>
@@ -83,18 +87,15 @@
 			<a href="{{ 'page/' ~ news._id }}">{{ news.title }}</a>
 		</div>
         {% endfor -%}
+		<div><a class="more" href="{{ '/' ~ (page_index + 1)}}">更多</a></div>
       <div id="push"></div>
     </div>
 
     <div id="footer">
       <div class="container">
-        <!-- <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p> -->
-        <p class="muted credit"><a href="http://shop.oreilly.com/product/0636920025054.do">一声新闻</a> by <a href="http://www.linkedin.com/in/russelljurney">一声新闻</a>, 2013
+        <p class="muted credit"><a href="http://news.zhuran.tw">一声新闻</a> 始于 <a href="http://zhuran.tw">鬼画符</a>, 2016
       </div>
     </div>
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/jquery.js"></script>
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
   </body>
