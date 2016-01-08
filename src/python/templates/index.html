@@ -65,6 +65,17 @@
       }
       
       .lead { margin-top: -15px; }
+	  
+	  
+	  .brand-link {
+		  color: rgb(180, 100, 120);
+
+	  }
+	  a.brand-link:hover {
+		  color: rgb(160, 84, 100);
+		  text-decoration:none;
+	  }
+	  
 	  .more {
 		  margin-top: 1.1rem;
 		  color: silver;
@@ -79,7 +90,7 @@
       <!-- Begin page content -->
       <div class="container">
         <div class="page-header">
-          <h1>一声新闻</h1>
+          <h1><a class="brand-link" href="http://news.zhuran.tw">一声新闻</a></h1>
         </div>
 		
 		{% for news in news_list -%}
@@ -93,7 +104,7 @@
 
     <div id="footer">
       <div class="container">
-        <p class="muted credit"><a href="http://news.zhuran.tw">一声新闻</a> 始于 <a href="http://zhuran.tw">鬼画符</a>, 2016
+        <p class="muted credit"><a class="brand-link" href="http://news.zhuran.tw">一声新闻</a> 由 <a class="brand-link" href="http://zhuran.tw">鬼画符</a> 炮制, 始于2016
       </div>
     </div>
     <script src="../assets/js/jquery.js"></script>
