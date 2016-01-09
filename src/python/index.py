@@ -3,6 +3,7 @@ from bson.objectid import ObjectId
 import pymongo
 import json
 import re
+from pytz import timezone
 
 app = Flask(__name__)
 
@@ -26,6 +27,7 @@ def pager(page_index):
 @app.route("/page/<id>")
 def page(id):
   page = collection.find_one({"_id": ObjectId(id)})
+  page["date"] = timezone("UTC").localize(page["date"]).astimezone(timezone("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S")
   return render_template('page.html', page=page)
 
 if __name__ == "__main__":
