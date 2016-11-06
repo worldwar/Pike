@@ -7,7 +7,7 @@ from pytz import timezone
 
 app = Flask(__name__)
 
-conn = pymongo.MongoClient("localhost")
+conn = pymongo.MongoClient("mongodb://garan:OK_COMPUTER@172.17.42.1")
 db = conn.news
 collection = db['ifengnews3']
 
