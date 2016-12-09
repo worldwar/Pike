@@ -23,4 +23,20 @@ function parseIfeng(data) {
     };
 }
 
+function parseCaixin(data) {
+    $ = cheerio.load(data);
+
+    var content = $('#Main_Content_Val > p').map(function(i, element) {
+        return $(this).text().trim();
+    }).get();
+    return {
+        "title": $('#conTit h1').text(),
+        "date": moment($('#pubtime_baidu').text()).toDate(),
+        "content": content,
+        "from": "caixin",
+        "origin": $('#source_baidu>a').text()
+    }
+}
+
 exports.parseIfeng = parseIfeng;
+exports.parseCaixin = parseCaixin;
